@@ -31,13 +31,129 @@ ctx.lineWidth = 1
 ctx.moveTo(100, 100)
 # 然後畫直線到 (150, 200) 座標點
 ctx.lineTo(150, 200)
-# 將畫筆移動到 (150, 100) 座標點
 ctx.moveTo(150, 100)
-# 然後畫直線到 (100, 200) 座標點
 ctx.lineTo(100, 200)
 # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
 ctx.strokeStyle = "blue"
 # 實際執行畫線
+ctx.stroke()
+ctx.closePath()
+&lt;/script&gt;
+
+&lt;!-- 以下實際利用  Brython 畫方格線 --&gt;
+
+&lt;canvas id="japanflag3" width="600" height="300"&gt;&lt;/canvas&gt;
+
+&lt;div id="container3"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+import math
+import re
+# 準備繪圖畫布
+canvas = doc["japanflag3"]
+container = doc["container3"]
+ctx = canvas.getContext("2d")
+# 以下可以利用 ctx 物件進行畫圖
+
+# 水平線
+for i in range(5):
+    ctx.beginPath()
+# 設定線的寬度為 1 個單位
+    if i == 0:
+        ctx.lineWidth = 7
+    else:
+        ctx.lineWidth = 1
+    ctx.moveTo(99, 100+i*30)
+    ctx.lineTo(201, 100+i*30)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+# 垂直線
+for i in range(6):
+    ctx.beginPath()
+# 設定線的寬度為 1 個單位
+    ctx.lineWidth = 1
+    ctx.moveTo(100+i*20, 100)
+    ctx.lineTo(100+i*20, 220)
+    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+# 1 與 A7
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.font = "30px Arial"
+ctx.fillText("A7", 100, 70)
+ctx.arc(160, 145, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("1", 45, 55)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 3
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(180, 145, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("3", 45, 85)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# 4
+ctx.beginPath()
+ctx.fillStyle = 'black'
+ctx.strokeStyle = "black"
+ctx.arc(140, 145, 9, 0, 2*math.pi, False)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+ctx.beginPath()
+ctx.fillStyle = 'white'
+ctx.font = "16px Arial"
+ctx.fillText("4", 45, 115)
+ctx.fill()
+ctx.stroke()
+ctx.closePath()
+
+# o
+ctx.beginPath()
+ctx.arc(50, 140, 7, 0, 2*math.pi, False)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
+ctx.stroke()
+ctx.closePath()
+
+# x
+ctx.beginPath()
+#ctx.arc(50, 170, 7, 0, 2*math.pi, False)
+ctx.moveTo(44, 164)
+ctx.lineTo(56, 176)
+ctx.moveTo(56, 164)
+ctx.lineTo(44, 176)
+ctx.lineWidth =3
+ctx.strokeStyle = "black"
 ctx.stroke()
 ctx.closePath()
 &lt;/script&gt;</summary><category term="Bython"></category></entry><entry><title>2016Fall CP 學員連結</title><link href="./2016fall-cp-xue-yuan-lian-jie.html" rel="alternate"></link><published>2016-11-05T12:00:00+08:00</published><updated>2016-11-05T12:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-11-05:./2016fall-cp-xue-yuan-lian-jie.html</id><summary type="html">&lt;p&gt;利用計算機程式兩班選課名單可以產生個別成員的倉儲、筆記、投影片與網誌.&lt;/p&gt;
