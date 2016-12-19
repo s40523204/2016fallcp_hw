@@ -5,3 +5,6 @@
 http://mdecourse.github.io/2016fallcp
 
 http://mdecourse.github.io/2016fallcp/blog
+
+s40523204 個人倉儲
+https://s40523204.github.io/2016fallcp_hw/blog/
