@@ -72,7 +72,7 @@ w = 20
 h = 30
 background(100, 100, w, h, 5, 5, ctx)
 canvasText(100,  80, 20, "A", "b", "", "black", ctx)
-&lt;/script&gt;</summary><category term="Brython"></category></entry><entry><title>W10 Bython 繪圖範例</title><link href="./w10-bython-hui-tu-fan-li.html" rel="alternate"></link><published>2016-11-14T00:00:00+08:00</published><updated>2016-11-14T00:00:00+08:00</updated><author><name>40523204</name></author><id>tag:,2016-11-14:./w10-bython-hui-tu-fan-li.html</id><summary type="html">&lt;p&gt;!-- 導入 Brython 標準程式庫 --&amp;gt;
+&lt;/script&gt;</summary><category term="Brython"></category></entry><entry><title>W10 Brython 繪圖範例</title><link href="./w10-brython-hui-tu-fan-li.html" rel="alternate"></link><published>2016-11-14T00:00:00+08:00</published><updated>2016-11-14T00:00:00+08:00</updated><author><name>40523204</name></author><id>tag:,2016-11-14:./w10-brython-hui-tu-fan-li.html</id><summary type="html">&lt;p&gt;!-- 導入 Brython 標準程式庫 --&amp;gt;
 &lt;script type="text/javascript" 
     src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
 &lt;/script&gt;&lt;/p&gt;
