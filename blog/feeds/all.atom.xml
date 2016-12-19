@@ -72,7 +72,7 @@ w = 20
 h = 30
 background(100, 100, w, h, 5, 5, ctx)
 canvasText(100,  80, 20, "A", "b", "", "black", ctx)
-&lt;/script&gt;</summary><category term="Brython"></category></entry><entry><title>W10 Bython 繪圖範例</title><link href="./w10-bython-hui-tu-fan-li.html" rel="alternate"></link><published>2016-11-14T00:00:00+08:00</published><updated>2016-11-14T00:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-11-14:./w10-bython-hui-tu-fan-li.html</id><summary type="html">&lt;p&gt;!-- 導入 Brython 標準程式庫 --&amp;gt;
+&lt;/script&gt;</summary><category term="Brython"></category></entry><entry><title>W10 Bython 繪圖範例</title><link href="./w10-bython-hui-tu-fan-li.html" rel="alternate"></link><published>2016-11-14T00:00:00+08:00</published><updated>2016-11-14T00:00:00+08:00</updated><author><name>40523204</name></author><id>tag:,2016-11-14:./w10-bython-hui-tu-fan-li.html</id><summary type="html">&lt;p&gt;!-- 導入 Brython 標準程式庫 --&amp;gt;
 &lt;script type="text/javascript" 
     src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
 &lt;/script&gt;&lt;/p&gt;
@@ -228,7 +228,7 @@ ctx.lineWidth =3
 ctx.strokeStyle = "black"
 ctx.stroke()
 ctx.closePath()
-&lt;/script&gt;</summary><category term="Bython"></category></entry><entry><title>2016Fall CP 學員連結</title><link href="./2016fall-cp-xue-yuan-lian-jie.html" rel="alternate"></link><published>2016-11-05T12:00:00+08:00</published><updated>2016-11-05T12:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-11-05:./2016fall-cp-xue-yuan-lian-jie.html</id><summary type="html">&lt;p&gt;利用計算機程式兩班選課名單可以產生個別成員的倉儲、筆記、投影片與網誌.&lt;/p&gt;
+&lt;/script&gt;</summary><category term="Brython"></category></entry><entry><title>2016Fall CP 學員連結</title><link href="./2016fall-cp-xue-yuan-lian-jie.html" rel="alternate"></link><published>2016-11-05T12:00:00+08:00</published><updated>2016-11-05T12:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-11-05:./2016fall-cp-xue-yuan-lian-jie.html</id><summary type="html">&lt;p&gt;利用計算機程式兩班選課名單可以產生個別成員的倉儲、筆記、投影片與網誌.&lt;/p&gt;
 
 
 &lt;p&gt;有關 Brython html 模組的用法, 請參考 &lt;a href="http://www.brython.info/static_doc/en/html.html"&gt;http://www.brython.info/static_doc/en/html.html&lt;/a&gt;.&lt;/p&gt;
