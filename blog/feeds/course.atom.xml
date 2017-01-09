@@ -16,7 +16,7 @@ brython(1);
 }
 &lt;/script&gt;
 
-&lt;!-- 以下可以執行  Brython 程式 --&gt;
+&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
 
 &lt;div id="con"&gt;&lt;/div&gt;
 
@@ -24,13 +24,14 @@ brython(1);
 from browser import alert
 from browser import document
 from browser import html
+import random
 #print("test")
 alert("test")
 con1 = document["con"]
 #1.利用亂數模組產生標準答案
 標準答案 = random.randint(1,100)
 
-#2.取得使用者所猜的整數(可以使用try except:防止輸入非整數)
+#2.取得使用者所猜的整數(可以使用 try except 防止輸入非整數)
 #3.根據使用者與標準答案比較大小,並且回應提示字串
 #4.假如利用while迴圈,可以在使用者沒有猜對之前繼續輸入,
 並且累計猜題次數
@@ -40,19 +41,92 @@ con1 &lt;= str(標準答案)
 try:
     for i in range(1):
         #con1 &lt;= "test" + " &lt;br /&gt;"
-        yourInput=int(input("請輸入一個整數!")
+        yourInput=int(input("請輸入一個整數!"))
         con1 &lt;= "test" + html.BR()
-        output =yourInput + 1
+        output = yourInput + 1
         con1 &lt;= "你輸入的整數加上1之後,為" + str(output)
 except:
     con1 &lt;= "拜託請輸入整數!"
 '''    
 def b1(e):    
-    alert("click")   
+    alert("click123")   
 document["b1"].bind("click",b1)
 &lt;/script&gt;
 
 &lt;p&gt;&lt;button id="b1"&gt;玩猜數字遊戲&lt;/button&gt;&lt;/p&gt;</summary><category term="Brython"></category></entry><entry><title>W12 Brython 繪圖範例</title><link href="./w12-brython-hui-tu-fan-li.html" rel="alternate"></link><published>2016-12-02T00:00:00+08:00</published><updated>2016-12-02T00:00:00+08:00</updated><author><name>40523204</name></author><id>tag:,2016-12-02:./w12-brython-hui-tu-fan-li.html</id><summary type="html">&lt;!-- 導入 Brython 標準程式庫 --&gt;
+
+&lt;script type="text/javascript" src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
+&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
+
+&lt;canvas id="chord1" width="600" height="400"&gt;&lt;/canvas&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import math
+# 準備繪圖畫布
+canvas = doc["chord1"]
+ctx = canvas.getContext("2d")
+
+def background(x, y, xinc, yinc, xnum, ynum, ctx):
+    # 水平線
+    for i in range(ynum+1):
+        ctx.beginPath()
+    # 設定線的寬度為 1 個單位
+        if i == 0:
+            ctx.lineWidth = 7
+        else:
+            ctx.lineWidth = 1
+        ctx.moveTo(x-1, y+i*yinc)
+        ctx.lineTo(x+xnum*xinc+1, y+i*yinc)
+        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+        ctx.strokeStyle = "blue"
+        ctx.stroke()
+        ctx.closePath()
+
+    # 垂直線
+    for i in range(xnum+1):
+        ctx.beginPath()
+    # 設定線的寬度為 1 個單位
+        ctx.lineWidth = 1
+        ctx.moveTo(x+i*xinc, y)
+        ctx.lineTo(x+i*xinc, y+ynum*yinc)
+        # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
+        ctx.strokeStyle = "blue"
+        ctx.stroke()
+        ctx.closePath()
+
+def canvasText(x, y, fontSize, string, sup, sub, color, ctx):
+    # 標定各弦音符號, 以及把位編號
+    ctx.beginPath()
+    ctx.fillStyle = color
+    ctx.strokeStyle = color
+    #ctx.font = "20px Arial"
+    ctx.font = str(fontSize)+ "px Arial"
+    ctx.fillText(string, x, y)
+    ctx.font = str(fontSize-8)+ "px Arial"
+    if sup != "":
+        ctx.fillText(sup, x+fontSize/1.6, y-fontSize/2)
+    if sub != "":
+        ctx.fillText(sup, x+fontSize/1.6, y)
+    ctx.fill()
+    ctx.stroke()
+    ctx.closePath()
+
+w = 20
+h = 30
+background(100, 100, w, h, 5, 5, ctx)
+canvasText(100,  80, 20, "A", "b", "", "black", ctx)
+&lt;/script&gt;</summary><category term="Brython"></category></entry><entry><title>W12 Brython 繪圖範例</title><link href="./w12-brython-hui-tu-fan-li.html" rel="alternate"></link><published>2016-11-29T00:00:00+08:00</published><updated>2016-11-29T00:00:00+08:00</updated><author><name>40523204</name></author><id>tag:,2016-11-29:./w12-brython-hui-tu-fan-li.html</id><summary type="html">&lt;!-- 導入 Brython 標準程式庫 --&gt;
 
 &lt;script type="text/javascript" src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
 &lt;/script&gt;
@@ -509,4 +583,6 @@ for stud_num in alist:
         mlink += html.BR()
     container2 &lt;= mlink
 &lt;/script&gt;
-&lt;/pre&gt;</summary><category term="評分"></category></entry></feed>
+&lt;/pre&gt;</summary><category term="評分"></category></entry><entry><title>2016fallcp_hw期末考週</title><link href="./2016fallcp_hwqi-mo-kao-zhou.html" rel="alternate"></link><published>2016-01-09T13:20:00+08:00</published><updated>2016-01-09T13:20:00+08:00</updated><author><name>40523204</name></author><id>tag:,2016-01-09:./2016fallcp_hwqi-mo-kao-zhou.html</id><summary type="html">&lt;p&gt;W17週心得與程式範例:&lt;/p&gt;
+&lt;p&gt;W16週心得與程式範例:&lt;/p&gt;
+&lt;p&gt;W15週心得與程式範例:&lt;/p&gt;</summary><category term="Brython"></category></entry></feed>
